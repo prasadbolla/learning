@@ -35,5 +35,12 @@ class PrototypeDemo{
         System.out.println("\n");  
         EmployeeRecord e2=(EmployeeRecord) e1.getClone();  
         e2.showRecord();  
+        e1.setAddress("32 bug");
+        e1.showRecord(); 
+        e2.showRecord(); 
+        e2.setAddress("35 bug");
+        e1.showRecord(); 
+        e2.showRecord(); 
+        System.out.println("hello");
     }     
 }
