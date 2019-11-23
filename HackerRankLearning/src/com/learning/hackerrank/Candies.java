@@ -2,31 +2,55 @@ package com.learning.hackerrank;
 
 import java.util.Arrays;
 
+
 public class Candies {
 
 	// Complete the candies function below.
 	static long candies(int n, int[] arr) {
+		int result = 0;
 
-		int[] candies = new int[arr.length];
-		candies[0] = 1;
+		int[] left = new int[n];
+		int[] right = new int[n];
 
-		for (int i = 1; i < arr.length; i++) {
-			if (arr[i - 1] < arr[i])
-				candies[i] = candies[i - 1] + 1;
+		Arrays.fill(left, 1);
+		Arrays.fill(right, 1);
 
-			if (arr[i - 1] >= arr[i])
-				candies[i] = 1;
-
-		}
-
-		for (int i = arr.length - 2; i >= 0; i--) {
-			if (arr[i] > arr[i + 1]) {
-				if (candies[i] <= candies[i + 1])
-					candies[i] = candies[i + 1] + 1;
+		// Left to Right
+		for (int i = 1; i < n; i++) {
+			if (arr[i - 1] < arr[i]) {
+				left[i] = left[i - 1] + 1;
 			}
 		}
 
-		return Arrays.stream(candies).sum();
+		// Right to Left
+		for (int i = n - 2; i >= 0; i--) {
+			if (arr[i + 1] < arr[i]) {
+				right[i] = right[i + 1] + 1;
+			}
+		}
+
+		for (int i = 0; i < n; i++) {
+			result += Math.max(left[i], right[i]);
+		}
+		return result;
+		
+/*		if (arr == null || n == 0) {
+			return 0;
+		}
+		
+		int[] candies = new int[n];
+		candies[0] = 1;
+		for (int i = 1; i < n; i++) {
+			candies[i] = 1;
+			if (arr[i] > arr[i - 1]) {
+				candies[i] += candies[i - 1];
+			} else {
+				for (int j = i; j > 0 && arr[j] < arr[j - 1]
+						&& candies[j] == candies[j - 1]; candies[--j] += 1) {
+				}
+			}
+		}
+		return Arrays.stream(candies).sum();*/
 	}
 
 	public static void main(String[] args) {
