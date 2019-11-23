@@ -1,12 +1,7 @@
 package com.learning.hackerrank;
 
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
+import java.io.IOException;
+import java.util.Arrays;
 
 public class ToysAndPrice {
 
@@ -27,7 +22,6 @@ public class ToysAndPrice {
 		return result;
 	}
 
-	private static final Scanner scanner = new Scanner(System.in);
 
 	public static void main(String[] args) throws IOException {
 

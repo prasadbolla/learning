@@ -1,4 +1,4 @@
-package com.learning.hackerrank;
+package com.learning.hackerrank.stringManipulation;
 
 import java.util.Scanner;
 

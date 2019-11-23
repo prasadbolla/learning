@@ -1,19 +1,14 @@
-package com.learning.hackerrank;
+package com.learning.hackerrank.stringManipulation;
 
 import java.io.IOException;
-import java.util.Scanner;
 
-public class AlternatingCharectors {
+public class AlternatCharacters {
 
 	// Complete the alternatingCharacters function below.
 	static int alternatingCharacters(String s) {
-
-		int deletions = 0;
-		int count = 1;
+		int count = 0;
 		for (int i = 1; i < s.length(); i++) {
 			if (s.charAt(i) != s.charAt(i - 1)) {
-				deletions += count - 1;
-				count = 1;
 				continue;
 			}
 			count++;
@@ -21,10 +16,8 @@ public class AlternatingCharectors {
 		return count;
 	}
 
-	private static final Scanner scanner = new Scanner(System.in);
-
 	public static void main(String[] args) throws IOException {
-		String s = "ABABABAB";
+		String s = "BBBBB";
 
 		int result = alternatingCharacters(s);
 
