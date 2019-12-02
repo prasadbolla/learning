@@ -1,4 +1,4 @@
-package com.tschoollab.domain;
+package com.lab.domain;
 
 public class Account {
 	

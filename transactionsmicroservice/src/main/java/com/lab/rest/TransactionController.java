@@ -1,10 +1,10 @@
-package com.tschoollab.rest;
+package com.lab.rest;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tschoollab.domain.Transaction;
+import com.lab.domain.Transaction;
 
 import java.util.List;
 import java.util.ArrayList;
